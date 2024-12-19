@@ -1,91 +1,111 @@
-# CSE_6242_Project
-Project for my class at Georgia Tech: CSE 6242
+# CSE 6242 Project: Predicting Outcomes in Clash Royale
 
+## Overview
+This project, created for the CSE 6242 course at Georgia Tech, applies advanced machine learning techniques to predict match outcomes in *Clash Royale*, a popular mobile strategy game. Using over 100,000 gameplay records, this project delivers actionable insights into player behavior, battle strategies, and card combinations. Interactive visualizations built in Power BI make the findings accessible and user-friendly.
 
-DESCRIPTION
-The Team014Final package is a comprehensive data visualization and analysis toolkit, utilizing Power BI for dynamic data interaction. It contains two key CSV datasets: class_royale_finalpreML_dataset_V1.csv and results_ml_joined_kk.csv.csv, both housed in the CODE folder. These datasets provide a base for machine learning analysis and pre-processed data. The centerpiece of the package is the Royale-PowerBI.pbix file, which offers an interactive Power BI dashboard for insightful data exploration.
+## Project Goals
+1. **Predict Match Outcomes**: Develop accurate models to forecast game results.
+2. **Enhance Gameplay**: Provide data-driven insights to improve strategies.
+3. **Interactive Visualizations**: Present findings through an intuitive Power BI dashboard.
 
+---
 
-IMPORTANT NOTES
-Ensure a stable and uninterrupted execution environment, given the lengthy duration of the data modeling process.
-The scripts may require specific libraries or dependencies, so check the documentation within each folder for installation and setup instructions.
-These processes are designed for advanced users with an understanding of data science and machine learning.
+## STEP 1: Extract the Relevant Files
+1. Extract the `Team014Final` package by unzipping the `team014final.zip` file.
+2. Inside the package, you will find two folders:
+   - **DOC**: Contains the final poster and team report.
+   - **Code**: Includes:
+     - Key datasets used for analysis.
+     - Code for data extraction, preparation, modeling, and visualization.
 
-INSTALLATION
-Prerequisites
-Microsoft Power BI Desktop (Latest version recommended)
-You can download for free at this site: https://www.microsoft.com/en-us/download/details.aspx?id=58494
+---
 
-To post the Power BI Desktop to the web you will need to have access to a tenant where a Power BI free license is assigned to you.    If you don't have this, you can view the visuals in the Power BI Desktop application.
+## Instructions Based on Your Goal
 
-STEP 1- EXTRACT ALL THE RELEVANT FILES FOR YOU TO EXPLORE
-1. Extract the Team014Final Package: Unzip the team014final.zip file
-2. You should see 2 folders: 1) DOC 2) Code
-3. Here is an overview on what is in each folder
-	a. DOC - Final Poster and Team Report
-	b. Code - Some of the key data that we used for our analysis, Code used to extract the data, prep it for our models, modeling, and Final Power BI Visualization
+### A. Looking at the Final Visuals
+1. **Open Power BI Desktop**: Start the Power BI Desktop application.
+2. **Load the PBIX File**: Open `Royale-PowerBI.pbix` from the **Code** folder.
+3. **Explore the Pages**:
+   - *About the Game*: Overview of Clash Royale.
+   - *Battle Analysis*: Analysis of battle strategies.
+   - *Player Analysis*: Insights into player behavior and performance.
+   - *Card Analysis*: Analysis of winning card combinations.
+   - *Model Results*: Results from two tested models and the best-performing model (XGBoost). Note: A Python script runs to display the confusion matrix; allow a few seconds for this to process.
+4. **Explore the Data Tables**:
+   - Click the table icon (second icon on the right) to view the following:
+     - `class_royale_finalpreppreML_dataset`: Battle log merged with player data.
+     - `class_royale_player_dataset`: Detailed player data.
+     - `class_royale_battlelog_dataset`: Battle data without player details.
+     - `Decision Tree Results`: Results from the Dense Neural Network model.
+     - `Regression Results`: Results from the Logistic Regression model.
+     - `XGBoost_prediction_results on 20k rows`: Results from the best-performing XGBoost model.
+     - `opponent card data X` and `player card data X`: Data visualized in the Power BI dashboard.
 
-DEPENDING ON WHAT YOU WANT TO DO FOLLOW THE INSTRUCTIONS THAT INTEREST YOU
+**Optional**: View Visuals on the Web  
+1. Ensure you have a Free Power BI license (not provided by Georgia Tech).  
+2. Publish the dashboard:
+   - Click the **Publish** button in the *Home* ribbon.
+   - Save when prompted.
+   - Choose "My Workspace."
+3. Follow the success message link to view the dashboard online. Log in using credentials with appropriate access.
 
-A. LOOKING AT THE FINAL VISUALS
-	1. Open Power BI Desktop: Start the Power BI Desktop application.
-	2. Load the PBIX File: From the Code folder, open the Royale-PowerBI.pbix file with Power BI Desktop.
-	3. You will see 4 pages
-		-"About the game" - Tells you about the game.
-		-"Battle Analysis" - Shows you an analysis on the the battles that we downloaded
-		-"Player Analysis" - Shows you an analysis on the players we downloaded
-		-"Card Analysis" - Shows you an analysis on the most winning card combinations.
-		-"Model Results" - Shows you an analysis on 2 of the models we tried plus the winning model.  Note that there is a python script running so it will take a few seconds to run to see the confusion matrix.
-	4. If you want to look at the tables we loaded, go to the table icon on the right hand side.  It is the second icon.
-	5.  You will see the following tables and you can explore them by clicking around.
-		-"class_royale_finalpreppreML_dataset" - this is the battle log with player data merged
-		-"class_royale_player_dataset" - this shows you all the players we looked at.
-		-"class_royale_battlelog_dataset" - this shows you the battle data without the additional player data joined.
-		-"Decision Tree Results" - These were the results from the Dense Neural Network results
-		-"Regression Results" - These were the results from the Logistic regression model.
-		-"XGBoost_prediction_results on 20k rows" - These were the results from the winning model, XGBoost.
-		-"opponent card data X" and "player card data X" - these are the datasets we used to visualize the cards in the visuals.
+---
 
-	(Optional)
-	1. If you want to see the visuals on the web, you need to have a Free Power BI license assigned to you. Ga Tech doesn't offer these licenses so you will have to use a tenant you have access to.  
-	2.  If you do have access, hit the "Publish" button in the "Home" ribbon.  Click Yes if it asks you to Save.
-	3. Pick the "My Workspace" option.
-	4. You will get a message that says "Success."  Click the link that says 'Open "Royal-Power BI.pbix" in Power BI'.
-	5. Login using the credentials for which you have access.
-	6. Explore the 5 pages.
-	   
+### B. Downloading the Data from the Clash Royale API
+1. **Create an API Key**:
+   - Register at [Clash Royale API](https://developer.clashroyale.com/#/).
+   - Log in, navigate to "My Account," and create a new key.
+   - Provide a name, IP description, and IP address. Save the generated token.
+2. **Run Python Scripts**:
+   - Go to `Code -> Code to get data from API`.
+   - Run the scripts in the following order:
+     1. `CRoyale Python Notebook`: Downloads ~100,000 battle records and exports them as `class_royale_battlelog_dataset.csv`.
+     2. `CRoyale Python Player Download`: Collects additional player data and exports it as `class_royale_player_dataset`.
+     3. `CRoyale Python Data Check`: Merges battle and player data into `class_royale_finalpreML_dataset.csv`.
+     4. `TakeCardDataandFlattenIt`: Downloads card data for Power BI visualization.
+   - Open the merged dataset in Excel, remove rows with null values in the `opponent_tag` column, and add a `winner` column (`1` if Player wins, `0` if Opponent wins). Save the file as `class_royale_finalpreML_dataset_V1.csv`.
 
-*****MAKE SURE THAT WHEN THE CODE IS REFERENCING A FILE, THAT YOU HAVE THE FILE IN THE CORRECT LOCATION SO THAT THE NOTEBOOKS RUN WITHOUT ERROR ********************************
+---
 
-B. DOWNLOADING THE DATA FROM THE CLASH ROYALE API and Creating the RAW Datasets
-	CREATING A KEY
-	1. Go the following website: https://developer.clashroyale.com/#/.
-	2. Create an account by following the instructions once you hit "Register"
-	3. Log In by clicking "Log In"
-	4. Click on the drop down by your name and click on "My Account"
-	5. Click on the "Create New Key"
-	6. Give it a name and IP description and make sure you add an IP address.
-	7. Copy the token as you will need it to use the API once you run the python code.
-	RUNNING PYTHON SCRIPTS
-	1. Go to the Code -> Code to get data from API folder.
-	2. Run the scripts in the following order.  Look at the code and make sure you replace the "API_KEY" variable with the token you previously saved.
-		a. CRoyale Python Notebook - this will download about 100,000 records of battles and export it to class_royale_battlelog_dataset.csv
-		b. CRoyale Python Player Download - this will take all the players from the 100,000 battles and get additional data from the player api.  It will export the data to a file called class_royale_player_dataset.
-		c. CRoyale Python Data Check - this will make sure that all battle players have player data and it will join the Battle and player dataset into 1 called class_royale_finalpreML_dataset.csv.
-		d. TakeCardDataandFlattenIt - this will dowload all the card data so that we can visualize it in Power BI.
-	3.  Open the class_royale_finalpreML_dataset.csv file in Excel.   Remove the record that has a null value in the "opponent_tag" column and add a "winner" column that shows 1 if the Player won and 0 if the Opponent won.  You can determine this by using the following formula.  If "player_crowns" > "opponent_crowns" then it is 1 elsel 0.  Rename file to class_royale_finalpreML_dataset_V1 to distinguish it from the original file. 
+### C. Prepping the Raw Data for ML Models
+1. Navigate to `Code -> Code to prep data for ML`.
+2. Run `makeDataMLReadable`:
+   - Prepares the dataset by encoding features (e.g., binary columns for each card).
+   - Output: `results_ml.csv`.
 
-C. PREPPING THE RAW DATASETS FOR ML MODELS.
-	1. Go to Code folder, and then the "Code to prep data for ML" folder and run the python script "makeDataMLReadable"  This script preps the data for ML models by enumerating a lot of the columns.  For example, it create a column for every possible card and gives a binary number of 0 or 1. 
-	2. The output of this script is a file called "results_ml.csv"
+---
 
+### D. Generating Model Results
+1. Go to `Code -> Code for Modeling`.
+2. Run the `XGBOOST` script:
+   - Trains the XGBoost model.
+   - Generates a test dataset (`XGBoost_prediction_results on 20k rows`) used in Power BI visualizations.
+3. **Optional**:
+   - Explore other models in `Code -> Additional ML Model - Optional`.
+   - Ensure `results_ml.csv` is in the correct directory for these scripts to run.
 
-D. GENERATING THE RESULTS FOR A FEW OF THE MODELS.
-*********WE RAN MULTIPLE MODELS BUT FOR THE PURPOSES OF THIS SUBMISSION TO SHOW OUR PROCESS WE SUBMITTED THE MOST SUCCESSFUL MODEL****************************
-	1. Go to the "Code" folder and then the "Code for Modeling" folder.
-	2. Run the "XGBOOST" script.  This script will train the XGBoost and it will also create a separate test dataset which we ran the models against to get our 73% accuracy.    
-	3. This test dataset was also the "XGBoost_prediction_results on 20k rows" dataset that was loaded into Power BI for visualization.   
+---
 
-	(optional model code)
-	1.  If you want to look at some of the other models we tried, go to the "Code--> Additional ML Model - Optional" folder.
-	2.  To run these models and look at the output, make sure that the input file/data needed is coming from "results_ml.csv" and then run the notebook to generate the results from these models.
+## Requirements
+### Software
+- **Microsoft Power BI Desktop** (latest version recommended)  
+  [Download here](https://www.microsoft.com/en-us/download/details.aspx?id=58494)
+- Python 3.8+ with libraries: Pandas, Scikit-learn, TensorFlow/Keras, etc.
+
+---
+
+## Key Findings
+- **Best Model**: XGBoost achieved 73% accuracy.
+- **Feature Importance**: Player rankings, card combinations, and game modes were most influential.
+- **Scalability**: Advanced models like XGBoost and DNNs maintained performance with larger datasets.
+
+---
+
+## Limitations
+- Data diversity and computational constraints limited real-time analysis.
+- Future iterations could include real-time predictions and expanded datasets.
+
+---
+
+This project demonstrates how machine learning can enhance competitive gaming by offering predictive insights and strategic tools to players and developers alike.
+
