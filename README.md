@@ -1,7 +1,7 @@
 # CSE 6242 Project: Predicting Outcomes in Clash Royale
 
 ## Overview
-This project, created for the CSE 6242 course at Georgia Tech, applies advanced machine learning techniques to predict match outcomes in *Clash Royale*, a popular mobile strategy game. Using over 100,000 gameplay records, this project delivers actionable insights into player behavior, battle strategies, and card combinations. Interactive visualizations built in Power BI make the findings accessible and user-friendly.
+This project, created for the CSE 6242 course at Georgia Tech, applies advanced machine learning techniques to predict match outcomes in Clash Royale, a popular mobile strategy game. Using over 100,000 gameplay records, this project delivers actionable insights into player behavior, battle strategies, and card combinations. Interactive visualizations built in Power BI make the findings accessible and user-friendly.
 
 ## Project Goals
 1. **Predict Match Outcomes**: Develop accurate models to forecast game results.
